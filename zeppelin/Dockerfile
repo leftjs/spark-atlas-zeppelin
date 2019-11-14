@@ -1,4 +1,4 @@
-FROM apache/zeppelin:0.8.2
+FROM apache/zeppelin:0.8.1
 
 RUN wget https://github.com/leftjs/spark-atlas-connector/releases/download/2.4.0-fix/spark-2.4.0-bin-atlas-fixed.tgz \
   &&  tar -xzf spark-2.4.0-bin-atlas-fixed.tgz \
