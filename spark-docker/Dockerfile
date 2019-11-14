@@ -20,7 +20,7 @@ RUN apt-get update -y \
 ####downloading & unpacking Spark 2.2.1 [prebuilt for Hadoop 2.6+ and scala 2.10]
 RUN wget https://github.com/leftjs/spark-atlas-connector/releases/download/2.4.0-fix/spark-2.4.0-bin-atlas-fixed.tgz \
   &&  tar -xzf spark-2.4.0-bin-atlas-fixed.tgz \
-  &&  mv spark-2.4.0-atlas-fixed /opt/spark
+  &&  mv spark-2.4.0-bin-spark_2.4.0_atlas_fixed /opt/spark
 
 
 #####adding conf files [to be used by supervisord for running spark master/slave]
