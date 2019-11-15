@@ -15,11 +15,11 @@ RUN wget -O /tmp/spark-2.4.0-bin-atlas-fixed.tgz https://github.com/leftjs/spark
 
 WORKDIR /zeppelin
 RUN cp /zeppelin/conf/zeppelin-env.sh.template /zeppelin/conf/zeppelin-env.sh \
-  && echo ' export ZEPPELIN_ADDR="0.0.0.0"' > /zeppelin/conf/zeppelin-env.sh
+  && echo 'export ZEPPELIN_ADDR="0.0.0.0"' > /zeppelin/conf/zeppelin-env.sh
 
-COPY atlas-application.properties /root/altas/
+COPY atlas-application.properties /tmp/atlas-application.properties
 
-RUN wget -O /root/atlas/spark-atlas-connector-assembly-0.1.0-SNAPSHOT.jar https://github.com/leftjs/spark-atlas-connector/releases/download/2.4.0-fix/spark-atlas-connector-assembly-0.1.0-SNAPSHOT.jar
+RUN wget -O /tmp/spark-atlas-connector-assembly-0.1.0-SNAPSHOT.jar https://github.com/leftjs/spark-atlas-connector/releases/download/2.4.0-fix/spark-atlas-connector-assembly-0.1.0-SNAPSHOT.jar
 
 ENV SPARK_HOME=/opt/spark
 
