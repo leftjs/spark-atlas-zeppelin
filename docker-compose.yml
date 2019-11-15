@@ -17,7 +17,12 @@ services:
       - ./data:/zeppelin/data
       - ./notebook:/zeppelin/notebook
       - ./logs:/zeppelin/logs
-
+  atlas:
+    build: ./atlas
+    image: leftjs/atlas:2.0.0
+    container_name: atlas
+    ports:
+      - 21000:21000
 networks:
   default:
     external:
