@@ -3,7 +3,7 @@ version: "2"
 services:
   zeppelin:
     build: ./zeppelin
-    image: leftjs/zeppelin:0.8.2
+    image: leftjs/zeppelin:0.8.3
     container_name: zeppelin
     environment:
       ZEPPELIN_PORT: 8090
