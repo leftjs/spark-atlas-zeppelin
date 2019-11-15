@@ -14,6 +14,9 @@ RUN wget -O /tmp/spark-2.4.0-bin-atlas-fixed.tgz https://github.com/leftjs/spark
   && mv spark-2.4.0-bin-spark_2.4.0_atlas_fixed /opt/spark
 
 WORKDIR /zeppelin
+RUN cp /zeppelin/conf/zeppelin-env.sh.template /zeppelin/conf/zeppelin-env.sh \
+  && echo ' export ZEPPELIN_ADDR="0.0.0.0"' > /zeppelin/conf/zeppelin-env.sh
+
 ENV SPARK_HOME=/opt/spark
 
 EXPOSE 8080
